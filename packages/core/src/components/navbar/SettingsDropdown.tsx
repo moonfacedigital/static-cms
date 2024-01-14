@@ -1,5 +1,4 @@
 import { Logout as LogoutIcon } from '@styled-icons/material/Logout';
-import { Palette as PaletteIcon } from '@styled-icons/material/Palette';
 import { Person as PersonIcon } from '@styled-icons/material/Person';
 import React, { useCallback, useState } from 'react';
 
@@ -50,9 +49,6 @@ const SettingsDropdown: FC<SettingsDropdownProps> = ({ inEditor }) => {
 
   const [themeDialogOpen, setThemeDialogOpen] = useState(false);
 
-  const handleOpenThemeDialog = useCallback(() => {
-    setThemeDialogOpen(true);
-  }, []);
 
   const handleCloseThemeDialog = useCallback(() => {
     setThemeDialogOpen(false);
@@ -71,18 +67,13 @@ const SettingsDropdown: FC<SettingsDropdownProps> = ({ inEditor }) => {
             <AvatarImage imageUrl={user?.avatar_url} />
           </>
         }
-        color="secondary"
-        variant="outlined"
+        color="info"
+        variant="contained"
         rounded={!user?.avatar_url || 'no-padding'}
         hideDropdownIcon
         rootClassName={classNames(classes.root, inEditor && classes['in-editor'])}
         aria-label="account options dropdown"
       >
-        <MenuGroup>
-          <MenuItemButton key="dark-mode" onClick={handleOpenThemeDialog} startIcon={PaletteIcon}>
-            {t('ui.settingsDropdown.theme')}
-          </MenuItemButton>
-        </MenuGroup>
         <MenuGroup>
           <MenuItemButton key="log-out" onClick={handleLogout} startIcon={LogoutIcon}>
             {t('ui.settingsDropdown.logOut')}

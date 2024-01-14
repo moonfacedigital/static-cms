@@ -3,7 +3,7 @@ import type { Theme } from '@staticcms/core';
 export const DARK_THEME: Theme = {
   name: 'Dark',
   common: {
-    gray: '#334155',
+    gray: '#737373',
   },
   text: {
     primary: '#fff',
@@ -11,44 +11,44 @@ export const DARK_THEME: Theme = {
     disabled: 'rgba(255, 255, 255, 0.5)',
   },
   background: {
-    main: '#1e293b',
-    light: '#2c3b55',
-    dark: '#0f172a',
-    divider: '#2c3b55',
+    main: '#262626',
+    light: '#404040',
+    dark: '#171717',
+    divider: '#525252',
   },
   scrollbar: {
     main: '#1e293b',
     light: '#2c3b55',
   },
   primary: {
-    main: '#339ef4',
-    light: '#6bb9f7',
-    dark: '#0c82e0',
-    contrastColor: '#ffffff',
+    main: '#2563eb',
+    light: '#262626',
+    dark: '#1d4ed8',
+    contrastColor: '#e5e5e5',
   },
   error: {
     main: '#f44336',
     light: '#e57373',
     dark: '#d32f2f',
-    contrastColor: '#ffffff',
+    contrastColor: '#450a0a',
   },
   warning: {
     main: '#ffa726',
     light: '#ffb74d',
     dark: '#f57c00',
-    contrastColor: '#ffffff',
+    contrastColor: '#451a03',
   },
   info: {
-    main: '#29b6f6',
-    light: '#4fc3f7',
-    dark: '#0288d1',
-    contrastColor: '#ffffff',
+    main: '#262626',
+    light: '#525252',
+    dark: '#262626',
+    contrastColor: '#737373',
   },
   success: {
     main: '#66bb6a',
     light: '#81c784',
     dark: '#388e3c',
-    contrastColor: '#ffffff',
+    contrastColor: '#052e16',
   },
   codemirror: {
     theme: 'dark',

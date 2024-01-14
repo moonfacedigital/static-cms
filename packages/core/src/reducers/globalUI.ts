@@ -1,5 +1,4 @@
 import { THEME_CHANGE, USE_OPEN_AUTHORING } from '../constants';
-import { isNotNullish } from '../lib/util/null.util';
 
 import type { GlobalUIAction } from '../actions/globalUI';
 
@@ -10,16 +9,16 @@ export type GlobalUIState = {
 };
 
 function loadColorTheme(): string {
-  const themeName = localStorage.getItem('color-theme');
-  if (isNotNullish(themeName)) {
-    return themeName;
-  }
+  // const themeName = localStorage.getItem('color-theme');
+  // if (isNotNullish(themeName)) {
+  //   return themeName;
+  // }
 
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    return 'dark';
-  }
+  // if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  //   return 'dark';
+  // }
 
-  return 'light';
+  return 'dark';
 }
 
 const defaultState: GlobalUIState = {
