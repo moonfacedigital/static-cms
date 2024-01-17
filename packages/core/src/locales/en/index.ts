@@ -136,7 +136,7 @@ const en: BaseLocalePhrasesRoot = {
       onDeleteUnpublishedChangesTitle: 'Delete unpublished changes?',
       onDeleteUnpublishedChangesBody:
         'All unpublished changes to this entry will be deleted. Do you still want to delete?',
-      loadingEntry: 'Loading entry...',
+      loadingEntry: '',
     },
     editorInterface: {
       sideBySideI18n: 'I18n Side by Side',

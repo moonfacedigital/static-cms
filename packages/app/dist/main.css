@@ -3788,6 +3788,10 @@
   justify-content: center;
 }
 
+.CMS_Login_root > * {
+  opacity: 0 !important
+}
+
 .CMS_Login_custom-logo {
   margin-bottom: 1rem;
   height: 10rem;

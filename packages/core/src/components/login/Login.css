@@ -8,6 +8,10 @@
     justify-center;
 }
 
+.CMS_Login_root > * {
+  opacity: 0 !important
+}
+
 .CMS_Login_custom-logo {
   @apply h-40
     w-80
