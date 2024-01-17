@@ -22,8 +22,8 @@ export const classes = generateClassNames('MainView', [
 
 TopBarProgress.config({
   barColors: {
-    0: '#000',
-    '1.0': '#000',
+    0: '#2563eb',
+    '1.0': '#2563eb',
   },
   shadowBlur: 0,
   barThickness: 2,
