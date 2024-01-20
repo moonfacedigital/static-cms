@@ -1,6 +1,6 @@
 import { Logout as LogoutIcon } from '@styled-icons/material/Logout';
-import { Person as PersonIcon } from '@styled-icons/material/Person';
 import { Workspaces as WorkspacesIcon } from '@styled-icons/material-outlined/Workspaces';
+import { MoreVert as MoreIcon } from '@styled-icons/material-outlined/MoreVert';
 import React, { useCallback, useState } from 'react';
 
 import { logoutUser } from '@staticcms/core/actions/auth';
@@ -34,7 +34,7 @@ const AvatarImage: FC<AvatarImageProps> = ({ imageUrl }) => {
   return imageUrl ? (
     <img className={classes['avatar-image']} src={imageUrl} />
   ) : (
-    <PersonIcon className={classes['avatar-icon']} />
+    <MoreIcon className={classes['avatar-icon']} />
   );
 };
 
