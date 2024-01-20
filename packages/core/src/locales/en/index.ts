@@ -355,7 +355,8 @@ const en: BaseLocalePhrasesRoot = {
     },
     settingsDropdown: {
       theme: 'Theme',
-      logOut: 'Log Out',
+      logOut: 'Sign out',
+      allProjects: "See all projects"
     },
     toast: {
       onFailToLoadEntries: 'Failed to load entry: %{details}',

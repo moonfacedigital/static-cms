@@ -49,7 +49,7 @@ export const classes = generateClassNames('App', ['root', 'content']);
 
 TopBarProgress.config({
   barColors: {
-    0: '#2563eb',
+    '0': '#2563eb',
     '1.0': '#2563eb',
   },
   shadowBlur: 0,

@@ -1,5 +1,6 @@
 import { Logout as LogoutIcon } from '@styled-icons/material/Logout';
 import { Person as PersonIcon } from '@styled-icons/material/Person';
+import { Workspaces as WorkspacesIcon } from '@styled-icons/material-outlined/Workspaces';
 import React, { useCallback, useState } from 'react';
 
 import { logoutUser } from '@staticcms/core/actions/auth';
@@ -58,6 +59,10 @@ const SettingsDropdown: FC<SettingsDropdownProps> = ({ inEditor }) => {
     dispatch(logoutUser());
   }, [dispatch]);
 
+  const handleHome = useCallback(() => {
+   window.location.replace("/")
+  }, [dispatch]);
+
   return (
     <>
       <Menu
@@ -75,6 +80,9 @@ const SettingsDropdown: FC<SettingsDropdownProps> = ({ inEditor }) => {
         aria-label="account options dropdown"
       >
         <MenuGroup>
+        <MenuItemButton key="all-projects" onClick={handleHome} startIcon={WorkspacesIcon}>
+            {t('ui.settingsDropdown.allProjects')}
+          </MenuItemButton>
           <MenuItemButton key="log-out" onClick={handleLogout} startIcon={LogoutIcon}>
             {t('ui.settingsDropdown.logOut')}
           </MenuItemButton>
