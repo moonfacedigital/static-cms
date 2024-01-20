@@ -55,8 +55,10 @@ const SettingsDropdown: FC<SettingsDropdownProps> = ({ inEditor }) => {
     setThemeDialogOpen(false);
   }, []);
 
-  const handleLogout = useCallback(() => {
+  const handleLogout = useCallback(async() => {
     dispatch(logoutUser());
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    window.location.replace("/")
   }, [dispatch]);
 
   const handleHome = useCallback(() => {
