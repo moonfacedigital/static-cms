@@ -1,3 +1,4 @@
+import type { ConfigAction } from '../actions/config';
 import type { EntriesAction } from '../actions/entries';
 import type { SearchAction } from '../actions/search';
 import type { ViewStyle } from '../constants/views';
@@ -10,5 +11,5 @@ export type EntriesState = {
     group?: Group;
     viewStyle: ViewStyle;
 };
-declare function entries(state: EntriesState | undefined, action: EntriesAction | SearchAction): EntriesState;
+declare function entries(state: EntriesState | undefined, action: EntriesAction | SearchAction | ConfigAction): EntriesState;
 export default entries;

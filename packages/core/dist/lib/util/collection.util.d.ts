@@ -12,8 +12,8 @@ export declare function selectTemplateName<EF extends BaseField>(collection: Col
 export declare function selectEntryCollectionTitle<EF extends BaseField>(collection: CollectionWithDefaults<EF> | undefined, entry: Entry): string;
 export declare function selectDefaultSortableFields<EF extends BaseField>(collection: CollectionWithDefaults<EF>, config: Config<EF>): string[];
 export declare function getSortableFields(collection: CollectionWithDefaults | undefined, t: (key: string) => string): SortableField[];
-export declare function getViewFilters<EF extends BaseField>(collection?: CollectionWithDefaults<EF>): import("@staticcms/core").ViewFilters | undefined;
-export declare function getViewGroups<EF extends BaseField>(collection?: CollectionWithDefaults<EF>): import("@staticcms/core").ViewGroups | undefined;
+export declare function getViewFilters<EF extends BaseField>(collection?: CollectionWithDefaults<EF>): import("@staticcms/core").ViewFiltersWithDefaults | undefined;
+export declare function getViewGroups<EF extends BaseField>(collection?: CollectionWithDefaults<EF>): import("@staticcms/core").ViewGroupsWithDefaults | undefined;
 export declare function selectFieldsComments<EF extends BaseField>(collection: CollectionWithDefaults<EF>, entryMap: Entry): Record<string, string>;
 export declare function getFileFromSlug<EF extends BaseField>(collection: Collection<EF>, slug: string): CollectionFile<EF> | undefined;
 export declare function selectFieldsWithMediaFolders<EF extends BaseField>(collection: CollectionWithDefaults<EF>, slug: string): Field[];

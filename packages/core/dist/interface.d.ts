@@ -34,10 +34,10 @@ export interface SortObject {
 }
 export type SortMap = Record<string, SortObject>;
 export type Sort = Record<string, SortMap>;
-export type FilterMap = ViewFilter & {
+export type FilterMap = ViewFilterWithDefaults & {
     active?: boolean;
 };
-export type GroupMap = ViewGroup & {
+export type GroupMap = ViewGroupWithDefaults & {
     active?: boolean;
 };
 export type Filter = Record<string, Record<string, FilterMap>>;
@@ -196,6 +196,8 @@ export interface BaseCollection {
 }
 export interface BaseCollectionWithDefaults extends Omit<BaseCollection, 'i18n'> {
     i18n?: I18nInfo;
+    view_filters?: ViewFiltersWithDefaults;
+    view_groups?: ViewGroupsWithDefaults;
 }
 export interface FilesCollection<EF extends BaseField = UnknownField> extends BaseCollection {
     files: CollectionFile<EF>[];
@@ -660,9 +662,15 @@ export interface ViewFilter {
     field: string;
     pattern: string | boolean | number;
 }
+export interface ViewFilterWithDefaults extends ViewFilter {
+    id: string;
+}
 export interface ViewFilters {
     default?: string;
     filters: ViewFilter[];
+}
+export interface ViewFiltersWithDefaults extends ViewFilters {
+    filters: ViewFilterWithDefaults[];
 }
 export interface ViewGroup {
     id?: string;
@@ -671,9 +679,15 @@ export interface ViewGroup {
     field: string;
     pattern?: string;
 }
+export interface ViewGroupWithDefaults extends ViewGroup {
+    id: string;
+}
 export interface ViewGroups {
     default?: string;
     groups: ViewGroup[];
+}
+export interface ViewGroupsWithDefaults extends ViewGroups {
+    groups: ViewGroupWithDefaults[];
 }
 export type SortDirection = typeof SORT_DIRECTION_ASCENDING | typeof SORT_DIRECTION_DESCENDING | typeof SORT_DIRECTION_NONE;
 export interface SortableFieldsDefault {
@@ -736,6 +750,7 @@ export interface Config<EF extends BaseField = UnknownField> {
     display_url?: string;
     base_url?: string;
     logo_url?: string;
+    logo_link?: string;
     media_folder?: string;
     public_folder?: string;
     media_folder_relative?: boolean;

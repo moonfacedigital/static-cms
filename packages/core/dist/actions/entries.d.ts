@@ -3,7 +3,7 @@ import type { NavigateFunction } from 'react-router-dom';
 import type { AnyAction } from 'redux';
 import type { ThunkDispatch } from 'redux-thunk';
 import type { ViewStyle } from '../constants/views';
-import type { CollectionWithDefaults, Entry, EntryData, Field, FieldError, I18nSettings, ImplementationMediaFile, SortDirection, ValueOrNestedValue, ViewFilter, ViewGroup } from '../interface';
+import type { CollectionWithDefaults, Entry, EntryData, Field, FieldError, I18nSettings, ImplementationMediaFile, SortDirection, ValueOrNestedValue, ViewFilter, ViewFilterWithDefaults, ViewGroup, ViewGroupWithDefaults } from '../interface';
 import type { RootState } from '../store';
 import type AssetProxy from '../valueObjects/AssetProxy';
 export declare function entryLoading(collection: CollectionWithDefaults, slug: string): {
@@ -34,11 +34,11 @@ export declare function entriesLoading(collection: CollectionWithDefaults): {
         readonly collection: string;
     };
 };
-export declare function filterEntriesRequest(collection: CollectionWithDefaults, filter: ViewFilter): {
+export declare function filterEntriesRequest(collection: CollectionWithDefaults, filter: ViewFilterWithDefaults): {
     readonly type: "FILTER_ENTRIES_REQUEST";
     readonly payload: {
         readonly collection: string;
-        readonly filter: ViewFilter;
+        readonly filter: ViewFilterWithDefaults;
     };
 };
 export declare function filterEntriesSuccess(collection: CollectionWithDefaults, filter: ViewFilter, entries: Entry[]): {
@@ -57,11 +57,11 @@ export declare function filterEntriesFailure(collection: CollectionWithDefaults,
         readonly error: unknown;
     };
 };
-export declare function groupEntriesRequest(collection: CollectionWithDefaults, group: ViewGroup): {
+export declare function groupEntriesRequest(collection: CollectionWithDefaults, group: ViewGroupWithDefaults): {
     readonly type: "GROUP_ENTRIES_REQUEST";
     readonly payload: {
         readonly collection: string;
-        readonly group: ViewGroup;
+        readonly group: ViewGroupWithDefaults;
     };
 };
 export declare function groupEntriesSuccess(collection: CollectionWithDefaults, group: ViewGroup, entries: Entry[]): {
@@ -125,8 +125,8 @@ export declare function entriesFailed(collection: CollectionWithDefaults, error:
     readonly payload: string;
 };
 export declare function sortByField(collection: CollectionWithDefaults, key: string, direction?: SortDirection): (dispatch: ThunkDispatch<RootState, {}, AnyAction>, getState: () => RootState) => Promise<void>;
-export declare function filterByField(collection: CollectionWithDefaults, filter: ViewFilter): (dispatch: ThunkDispatch<RootState, {}, AnyAction>, getState: () => RootState) => Promise<void>;
-export declare function groupByField(collection: CollectionWithDefaults, group: ViewGroup): (dispatch: ThunkDispatch<RootState, {}, AnyAction>, getState: () => RootState) => Promise<void>;
+export declare function filterByField(collection: CollectionWithDefaults, filter: ViewFilterWithDefaults): (dispatch: ThunkDispatch<RootState, {}, AnyAction>, getState: () => RootState) => Promise<void>;
+export declare function groupByField(collection: CollectionWithDefaults, group: ViewGroupWithDefaults): (dispatch: ThunkDispatch<RootState, {}, AnyAction>, getState: () => RootState) => Promise<void>;
 export declare function changeViewStyle(viewStyle: ViewStyle): {
     readonly type: "CHANGE_VIEW_STYLE";
     readonly payload: {
@@ -276,8 +276,8 @@ export declare function retrieveLocalBackup(collection: CollectionWithDefaults, 
 export declare function deleteLocalBackup(collection: CollectionWithDefaults, slug: string): (_dispatch: ThunkDispatch<RootState, {}, AnyAction>, getState: () => RootState) => Promise<void>;
 export declare function loadEntry(collection: CollectionWithDefaults, slug: string, silent?: boolean): (dispatch: ThunkDispatch<RootState, {}, AnyAction>, getState: () => RootState) => Promise<void>;
 export declare function tryLoadEntry(state: RootState, collection: CollectionWithDefaults, slug: string): Promise<Entry<import("../interface").ObjectValue>>;
-export declare function loadEntries(collection: CollectionWithDefaults, page?: number): (dispatch: ThunkDispatch<RootState, {}, AnyAction>, getState: () => RootState) => Promise<void>;
-export declare function traverseCollectionCursor(collection: CollectionWithDefaults, action: string): (dispatch: ThunkDispatch<RootState, {}, AnyAction>, getState: () => RootState) => Promise<void | {
+export declare function loadEntries(collection: CollectionWithDefaults, page?: number): (dispatch: ThunkDispatch<RootState, {}, AnyAction>, getState: () => RootState) => Promise<undefined>;
+export declare function traverseCollectionCursor(collection: CollectionWithDefaults, action: string): (dispatch: ThunkDispatch<RootState, {}, AnyAction>, getState: () => RootState) => Promise<{
     readonly type: "ENTRIES_SUCCESS";
     readonly payload: {
         readonly collection: string;
@@ -286,7 +286,7 @@ export declare function traverseCollectionCursor(collection: CollectionWithDefau
         readonly cursor: Cursor;
         readonly append: boolean;
     };
-}>;
+} | undefined>;
 export declare function createEmptyDraft(collection: CollectionWithDefaults, search: string): (dispatch: ThunkDispatch<RootState, {}, AnyAction>, getState: () => RootState) => Promise<void>;
 export declare function getMediaAssets({ entry }: {
     entry: Entry;

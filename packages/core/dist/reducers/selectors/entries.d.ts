@@ -1,5 +1,5 @@
-import type { ViewStyle } from '@staticcms/core/constants/views';
 import type { Entries, Entry, GroupMap, ObjectValue, Page, SortMap, SortObject } from '@staticcms/core';
+import type { ViewStyle } from '@staticcms/core/constants/views';
 import type { RootState } from '@staticcms/core/store';
 export declare const selectEntriesFilters: (entries: RootState) => import("@staticcms/core").Filter | undefined;
 export declare const selectEntriesFilter: ((state: Omit<import("redux").EmptyObject & {
