@@ -2,7 +2,7 @@
   @apply flex
     flex-col
     min-h-full
-    w-full;
+    w-full gap-y-4;
 
   &:not(.CMS_EditorControlPane_no-border) {
     border-color: var(--background-main);

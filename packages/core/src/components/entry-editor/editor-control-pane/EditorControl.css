@@ -1,4 +1,5 @@
 .CMS_EditorControl_root {
+  @apply bg-red-500;
 }
 
 .CMS_EditorControl_hidden {

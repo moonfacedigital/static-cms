@@ -3226,6 +3226,10 @@
 }
 
 .CMS_EditorControl_root {
+
+    --tw-bg-opacity: 1;
+
+    background-color: rgb(239 68 68 / var(--tw-bg-opacity))
 }
 
 .CMS_EditorControl_hidden {
@@ -3259,6 +3263,7 @@
     min-height: 100%;
     width: 100%;
     flex-direction: column;
+    row-gap: 1rem;
 }
 
   .CMS_EditorControlPane_root:not(.CMS_EditorControlPane_no-border) {
@@ -3786,10 +3791,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.CMS_Login_root > * {
-  opacity: 0 !important
 }
 
 .CMS_Login_custom-logo {
