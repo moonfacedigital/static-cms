@@ -3242,9 +3242,7 @@
 
 .CMS_EditorControl_root {
 
-    --tw-bg-opacity: 1;
-
-    background-color: rgb(38 38 38 / var(--tw-bg-opacity))
+    background-color: rgb(38 38 38 / 0.5)
 }
 
 .CMS_EditorControl_hidden {
@@ -5526,14 +5524,12 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 0.125rem;
-    border-top-width: 1.5px;
     border-bottom-width: 1.5px;
     --tw-border-opacity: 1;
     border-color: rgb(82 82 82 / var(--tw-border-opacity));
     background-color: rgb(38 38 38 / 0.8);
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    padding-top: 0.5rem;
     padding-bottom: 0.375rem;
     --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);

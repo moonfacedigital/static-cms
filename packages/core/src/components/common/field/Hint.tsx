@@ -53,7 +53,7 @@ const Hint: FC<HintProps> = ({
         className,
       )}
       onClick={handleOnClick}
-    >
+    >🛈&nbsp;
       <ReactMarkdown
         remarkPlugins={[gfm]}
         allowedElements={['a', 'strong', 'em', 'del']}
