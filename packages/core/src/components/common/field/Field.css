@@ -5,7 +5,7 @@
     flex
     items-center
     gap-2
-    border-b;
+    border-b-[1.5px];
 
   &:not(.CMS_Field_error) {
     &:not(.CMS_Field_disabled) {
@@ -71,7 +71,7 @@
 .CMS_Field_wrapper {
   @apply flex
     flex-col
-    w-full;
+    w-full gap-y-4;
 
   &.CMS_Field_for-single-list {
     @apply mr-14;

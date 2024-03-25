@@ -1,6 +1,7 @@
 .CMS_MediaLibraryModal_root {
-  @apply w-media-library-dialog
-    h-media-library-dialog;
+  @apply inset-0 w-full h-full;
+    max-width: 125lvh;
+    max-height: 100lvh;
 
   & .CMS_MediaLibraryModal_close-button {
     background: var(--background-main);
@@ -10,9 +11,7 @@
       background: var(--background-light);
     }
 
-    @apply absolute
-      -top-3.5
-      -left-3.5
-      z-[1];
+    @apply 
+    mt-4 mx-5 md:mb-4;
   }
 }

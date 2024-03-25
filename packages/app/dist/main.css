@@ -1307,12 +1307,14 @@
 .CMS_Navbar_content-wrapper {
   margin-left: auto;
   margin-right: auto;
+  padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
 @media (min-width: 640px) {
 
   .CMS_Navbar_content-wrapper {
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 }
@@ -1320,6 +1322,7 @@
 @media (min-width: 1024px) {
 
   .CMS_Navbar_content-wrapper {
+    padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
 }
@@ -1355,6 +1358,7 @@
 .CMS_Navbar_breadcrumbs .CMS_Navbar_logo-wrapper {
     background: var(--background-light);
     display: flex;
+    display: none !important;
     width: 4rem;
     flex-shrink: 0;
     align-items: center;
@@ -2782,8 +2786,7 @@
 }
 
   .CMS_MediaLibrary_root.CMS_MediaLibrary_for-image .CMS_MediaLibrary_preview {
-  display: grid;
-  grid-template-columns: 126px auto;
+  display: flex;
 }
 
   .CMS_MediaLibrary_root.CMS_MediaLibrary_for-image .CMS_MediaLibrary_preview-details {
@@ -2858,7 +2861,10 @@
 
 .CMS_MediaLibrary_controls {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  column-gap: 1rem;
+  row-gap: 1.5rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   padding-top: 1rem;
@@ -3087,8 +3093,11 @@
 }
 
 .CMS_MediaLibraryModal_root {
-  height: 80vh;
-  width: 80vw;
+  inset: 0px;
+  height: 100%;
+  width: 100%;
+    max-width: 125lvh;
+    max-height: 100lvh;
 }
 
   .CMS_MediaLibraryModal_root .CMS_MediaLibraryModal_close-button {
@@ -3101,10 +3110,16 @@
     }
 
   .CMS_MediaLibraryModal_root .CMS_MediaLibraryModal_close-button {
-  position: absolute;
-  top: -0.875rem;
-  left: -0.875rem;
-  z-index: 1;
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+  margin-top: 1rem;
+}
+
+  @media (min-width: 768px) {
+
+  .CMS_MediaLibraryModal_root .CMS_MediaLibraryModal_close-button {
+    margin-bottom: 1rem;
+  }
 }
 
 .CMS_EditorWorkflowToolbarButtons_not-checked {
@@ -3229,7 +3244,7 @@
 
     --tw-bg-opacity: 1;
 
-    background-color: rgb(239 68 68 / var(--tw-bg-opacity))
+    background-color: rgb(38 38 38 / var(--tw-bg-opacity))
 }
 
 .CMS_EditorControl_hidden {
@@ -3984,7 +3999,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  border-bottom-width: 1px;
+  border-bottom-width: 1.5px;
 }
 
   .CMS_Field_root:not(.CMS_Field_error):not(.CMS_Field_disabled):focus-within {
@@ -4041,6 +4056,7 @@
   display: flex;
   width: 100%;
   flex-direction: column;
+  row-gap: 1rem;
 }
 
 .CMS_Field_wrapper.CMS_Field_for-single-list {
@@ -5496,30 +5512,32 @@
 }
 
 .CMS_WidgetMarkdown_Toolbar_root {
-  background: var(--background-dark);
-  border-color: color-mix(in srgb, var(--background-divider) 35%, transparent);
-  position: sticky;
-  top: 0px;
-  z-index: 10;
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
-  margin-top: -1.25rem;
-  margin-bottom: 0.375rem;
-  display: flex;
-  min-height: 40px;
-  -webkit-user-select: none;
-          user-select: none;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.125rem;
-  border-bottom-width: 1px;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.375rem;
-  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    margin-top: -1.25rem;
+    margin-bottom: 0.375rem;
+    display: flex;
+    min-height: 40px;
+    -webkit-user-select: none;
+            user-select: none;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.125rem;
+    border-top-width: 1.5px;
+    border-bottom-width: 1.5px;
+    --tw-border-opacity: 1;
+    border-color: rgb(82 82 82 / var(--tw-border-opacity));
+    background-color: rgb(38 38 38 / 0.8);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.375rem;
+    --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
 
 .CMS_WidgetMarkdown_Code_root {

@@ -24,9 +24,9 @@
 
 .CMS_Navbar_content-wrapper {
   @apply mx-auto
-    pr-2
-    sm:pr-4
-    lg:pr-5;
+    px-2
+    sm:px-4
+    lg:px-5;
 
   & .CMS_Navbar_content {
     @apply relative
@@ -51,7 +51,7 @@
   & .CMS_Navbar_logo-wrapper {
     background: var(--background-light);
 
-    @apply flex
+    @apply !hidden flex
       flex-shrink-0
       items-center
       justify-center
