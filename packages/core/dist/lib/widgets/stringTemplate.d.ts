@@ -12,6 +12,7 @@ export declare function expandPath({ data, path, paths, }: {
     path: string;
     paths?: string[];
 }): string[];
+export declare function getExplicitFieldReplacement(key: string, data: ObjectValue | undefined | null): any;
 export declare function compileStringTemplate(template: string, date: Date | undefined | null, identifier: string | undefined, data: ObjectValue | undefined | null, fields: Field[] | undefined, processor?: (value: string, field: Field | null) => string): string;
 export declare function extractTemplateVars(template: string): string[];
 /**

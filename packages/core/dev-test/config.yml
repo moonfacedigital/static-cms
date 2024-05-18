@@ -1,5 +1,9 @@
 backend:
-  name: test-repo
+  name: co-git-gateway
+  login: false
+  gateway_url: "http://localhost:5173"
+  api_root: "http://localhost:5173"
+  identity_url: "http://localhost:5173"
 logo_link: '/#/page/custom-page'
 site_url: 'https://example.com'
 media_folder: /assets/uploads

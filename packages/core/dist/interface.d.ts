@@ -163,6 +163,7 @@ export interface I18nSettings {
     currentLocale: string;
     defaultLocale: string;
     locales: string[];
+    enforceRequiredNonDefault?: boolean;
 }
 export type Format = keyof typeof formatExtensions;
 export interface i18nCollection<EF extends BaseField = UnknownField> extends Omit<CollectionWithDefaults<EF>, 'i18n'> {
@@ -479,6 +480,7 @@ export interface SelectWidgetOptionObject {
     value: string | number;
 }
 export type AuthScope = 'repo' | 'public_repo';
+export type AuthScheme = 'token' | 'Bearer';
 export type SlugEncoding = 'unicode' | 'ascii';
 export type RenderedField<F extends BaseField = UnknownField> = F & {
     renderedFields?: ReactNode[];
@@ -714,6 +716,7 @@ export interface Backend {
     identity_url?: string;
     gateway_url?: string;
     auth_scope?: AuthScope;
+    auth_scheme?: AuthScheme;
     commit_messages?: {
         create?: string;
         update?: string;
@@ -947,6 +950,7 @@ export interface I18nInfo {
     locales: string[];
     default_locale?: string;
     structure: I18nStructure;
+    enforce_required_non_default?: boolean;
 }
 export interface ProcessedCodeLanguage {
     label: string;

@@ -2402,6 +2402,7 @@
 
 .CMS_Collection_new-entry-button {
   display: none;
+  min-width: 0px;
 }
 
 @media (min-width: 768px) {
@@ -2409,6 +2410,12 @@
   .CMS_Collection_new-entry-button {
     display: flex;
   }
+}
+
+.CMS_Collection_new-entry-button-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .CMS_InlineEditTextField_root {
@@ -3176,6 +3183,19 @@
 @media (min-width: 1024px) {
 
     .CMS_EditorToolbar_preview-toggle {
+
+        display: none !important
+    }
+}
+
+.CMS_EditorToolbar_discard-button {
+
+    display: flex
+}
+
+@media (min-width: 1024px) {
+
+    .CMS_EditorToolbar_discard-button {
 
         display: none !important
     }

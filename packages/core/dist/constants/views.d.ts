@@ -6,6 +6,7 @@ export declare const COLLECTION_CARD_WIDTH = 240;
 export declare const COLLECTION_CARD_HEIGHT = 204;
 export declare const COLLECTION_CARD_IMAGE_HEIGHT = 140;
 export declare const COLLECTION_CARD_HEIGHT_WITHOUT_IMAGE = 56;
+export declare const COLLECTION_CARD_DATE_HEIGHT = 24;
 export declare const COLLECTION_CARD_MARGIN = 10;
 export declare const EDITOR_SIZE_COMPACT = "compact";
 export declare const EDITOR_SIZE_HALF = "half";

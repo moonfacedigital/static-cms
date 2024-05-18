@@ -1,5 +1,6 @@
 import {
   BitbucketBackend,
+  CoGitGatewayBackend,
   GiteaBackend,
   GitGatewayBackend,
   GitHubBackend,
@@ -32,6 +33,7 @@ import {
 export default function addExtensions() {
   // Register all the things
   registerBackend('git-gateway', GitGatewayBackend);
+  registerBackend('co-git-gateway', CoGitGatewayBackend);
   registerBackend('github', GitHubBackend);
   registerBackend('gitlab', GitLabBackend);
   registerBackend('gitea', GiteaBackend);

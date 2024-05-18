@@ -1,8 +1,8 @@
 /// <reference types="react" />
 import { Cursor } from '@staticcms/core/lib/util';
 import AssetProxy from '@staticcms/core/valueObjects/AssetProxy';
-import type { WorkflowStatus } from '@staticcms/core/constants/publishModes';
 import type { BackendClass, BackendEntry, ConfigWithDefaults, DataFile, DisplayURL, ImplementationEntry, ImplementationFile, ImplementationMediaFile, PersistOptions, UnpublishedEntry, User } from '@staticcms/core';
+import type { WorkflowStatus } from '@staticcms/core/constants/publishModes';
 type RepoFile = {
     path: string;
     content: string | AssetProxy;

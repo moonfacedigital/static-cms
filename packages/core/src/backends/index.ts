@@ -5,3 +5,4 @@ export { GitLabBackend } from './gitlab';
 export { GiteaBackend } from './gitea';
 export { ProxyBackend } from './proxy';
 export { TestBackend } from './test';
+export { CoGitGatewayBackend } from './co-git-gateway';

@@ -3,7 +3,7 @@
 import { WorkflowStatus } from '@staticcms/core/constants/publishModes';
 import { Cursor } from '@staticcms/core/lib/util';
 import API from './API';
-import type { BackendClass, BackendEntry, ConfigWithDefaults, Credentials, DisplayURL, ImplementationFile, PersistOptions, UnpublishedEntry, UnpublishedEntryMediaFile, User } from '@staticcms/core';
+import type { AuthScheme, BackendClass, BackendEntry, ConfigWithDefaults, Credentials, DisplayURL, ImplementationFile, PersistOptions, UnpublishedEntry, UnpublishedEntryMediaFile, User } from '@staticcms/core';
 import type { AsyncLock } from '@staticcms/core/lib/util';
 import type AssetProxy from '@staticcms/core/valueObjects/AssetProxy';
 import type { Semaphore } from 'semaphore';
@@ -34,6 +34,7 @@ export default class GitHub implements BackendClass {
     mediaFolder?: string;
     previewContext: string;
     token: string | null;
+    authScheme: AuthScheme;
     squashMerges: boolean;
     cmsLabelPrefix: string;
     _currentUserPromise?: Promise<GitHubUser>;

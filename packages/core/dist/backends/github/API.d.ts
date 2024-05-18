@@ -2,7 +2,7 @@
 import { PreviewState } from '@staticcms/core/constants/enums';
 import { WorkflowStatus } from '@staticcms/core/constants/publishModes';
 import { PullRequestState } from './types';
-import type { DataFile, PersistOptions, UnpublishedEntry } from '@staticcms/core';
+import type { AuthScheme, DataFile, PersistOptions, UnpublishedEntry } from '@staticcms/core';
 import type { ApiRequest, FetchError } from '@staticcms/core/lib/util';
 import type AssetProxy from '@staticcms/core/valueObjects/AssetProxy';
 import type { Semaphore } from 'semaphore';
@@ -12,6 +12,7 @@ export declare const MOCK_PULL_REQUEST = -1;
 export interface Config {
     apiRoot?: string;
     token?: string;
+    authScheme?: AuthScheme;
     branch?: string;
     useOpenAuthoring?: boolean;
     openAuthoringEnabled?: boolean;
@@ -67,6 +68,7 @@ export type Diff = {
 export default class API {
     apiRoot: string;
     token: string;
+    authScheme: AuthScheme;
     branch: string;
     useOpenAuthoring?: boolean;
     openAuthoringEnabled?: boolean;

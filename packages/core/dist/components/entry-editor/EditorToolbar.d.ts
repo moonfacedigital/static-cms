@@ -1,8 +1,8 @@
-import type { WorkflowStatus } from '@staticcms/core/constants/publishModes';
 import type { CollectionWithDefaults, EditorPersistOptions } from '@staticcms/core';
+import type { WorkflowStatus } from '@staticcms/core/constants/publishModes';
 import type { FC, MouseEventHandler } from 'react';
 import './EditorToolbar.css';
-export declare const classes: Record<"root" | "delete-button" | "more-menu" | "more-menu-button" | "more-menu-label-icon" | "preview-toggle" | "publish-button" | "publish-button-icon" | "publish-button-label" | "workflow-controls", string>;
+export declare const classes: Record<"root" | "delete-button" | "more-menu" | "more-menu-button" | "more-menu-label-icon" | "preview-toggle" | "discard-button" | "publish-button" | "publish-button-icon" | "publish-button-label" | "workflow-controls", string>;
 export interface EditorToolbarProps {
     isPersisting?: boolean;
     onPersist: (opts?: EditorPersistOptions) => Promise<void>;

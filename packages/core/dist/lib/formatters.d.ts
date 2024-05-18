@@ -13,8 +13,9 @@ type Options<EF extends BaseField> = {
     collection?: CollectionWithDefaults<EF>;
     authorLogin?: string;
     authorName?: string;
+    data?: EntryData;
 };
-export declare function commitMessageFormatter<EF extends BaseField>(type: keyof typeof commitMessageTemplates, config: ConfigWithDefaults<EF>, { slug, path, collection, authorLogin, authorName }: Options<EF>, isOpenAuthoring?: boolean): string;
+export declare function commitMessageFormatter<EF extends BaseField>(type: keyof typeof commitMessageTemplates, config: ConfigWithDefaults<EF>, { slug, path, collection, authorLogin, authorName, data }: Options<EF>, isOpenAuthoring?: boolean): string;
 export declare function prepareSlug(slug: string): string;
 export declare function getProcessSegment(slugConfig?: Slug, ignoreValues?: string[]): (value: string) => string;
 export declare function slugFormatter<EF extends BaseField = UnknownField>(collection: CollectionWithDefaults<EF>, entryData: EntryData, slugConfig: Slug | undefined, fields: Field[] | undefined): string;
