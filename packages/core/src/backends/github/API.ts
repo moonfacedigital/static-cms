@@ -67,6 +67,7 @@ import type {
   ReposListCommitsResponse,
   TreeFile,
 } from './types';
+import Cookies from 'js-cookie';
 
 export const API_NAME = 'GitHub';
 
@@ -110,7 +111,7 @@ export interface Metadata {
 }
 
 export interface BlobArgs {
-  sha: string;
+  path: string;
   repoURL: string;
   parseText: boolean;
 }
@@ -125,6 +126,11 @@ type MediaFile = {
   sha: string;
   path: string;
 };
+
+const mfHeaders = {
+  'x-mf-co-project': `_${sessionStorage.getItem("coProject")}`,
+  Authorization: `Bearer ${Cookies.get("co_session")}`
+}
 
 function withCmsLabel(pr: GitHubPull, cmsLabelPrefix: string) {
   return pr.labels.some(l => isCMSLabel(l.name, cmsLabelPrefix));
@@ -297,12 +303,18 @@ export default class API {
     return req;
   }
 
+
+
   async request(
     path: string,
     options: Options = {},
     parser = (response: Response) => this.parseResponse(response),
   ) {
     options = { cache: 'no-cache', ...options };
+    options.headers = {
+      ...options.headers,
+      ...mfHeaders
+    }
     const headers = await this.requestHeaders(options.headers || {});
     const url = this.urlFor(path, options);
     let responseStatus = 500;
@@ -379,10 +391,12 @@ export default class API {
       parseText?: boolean;
     } = {},
   ) {
-    if (!sha) {
-      sha = await this.getFileSha(path, { repoURL, branch });
-    }
-    const content = await this.fetchBlobContent({ sha: sha as string, repoURL, parseText });
+    // if (!sha) {
+    //   sha = await this.getFileSha(path, { repoURL, branch });
+    // }
+    sha = sha
+    branch = branch
+    const content = await this.fetchBlobContent({ path: path as string, repoURL, parseText });
     return content;
   }
 
@@ -408,8 +422,8 @@ export default class API {
     return fileMetadata;
   }
 
-  async fetchBlobContent({ sha, repoURL, parseText }: BlobArgs) {
-    const result: GitGetBlobResponse = await this.request(`${repoURL}/git/blobs/${sha}`, {
+  async fetchBlobContent({ path, repoURL, parseText }: BlobArgs) {
+    const result: GitGetBlobResponse = await this.request(`${repoURL}/custom/getFile/${path}`, {
       cache: 'force-cache',
     });
 

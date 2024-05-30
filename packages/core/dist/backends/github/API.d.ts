@@ -47,7 +47,7 @@ export interface Metadata {
     timeStamp: string;
 }
 export interface BlobArgs {
-    sha: string;
+    path: string;
     repoURL: string;
     parseText: boolean;
 }
@@ -116,7 +116,7 @@ export default class API {
         parseText?: boolean;
     }): Promise<string | Blob>;
     readFileMetadata(path: string, sha: string | null | undefined): Promise<import("@staticcms/core").FileMetadata>;
-    fetchBlobContent({ sha, repoURL, parseText }: BlobArgs): Promise<string | Blob>;
+    fetchBlobContent({ path, repoURL, parseText }: BlobArgs): Promise<string | Blob>;
     listFiles(path: string, { repoURL, branch, depth }?: {
         repoURL?: string | undefined;
         branch?: string | undefined;
